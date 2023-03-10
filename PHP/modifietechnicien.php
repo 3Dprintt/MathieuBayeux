@@ -1,5 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;', 'root', 'root');
+include("connexionDB.php");
 if (isset($_GET['ID']) && !empty($_GET['ID'])) {
     $getid = $_GET['ID'];
 

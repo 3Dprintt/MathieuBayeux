@@ -1,5 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;charset=utf8;', 'root', 'root');
+include("connexionDB.php");
 if (isset($_POST['envoi'])) {
     if (!empty($_POST['email']) && !empty($_POST['Password'])) {  // paramatre nécessaire
         $email = htmlspecialchars($_POST['email']);
@@ -20,7 +20,7 @@ if (isset($_POST['envoi'])) {
             $_SESSION['Prenom'] = $line['Prenom'];
             $_SESSION['fonction'] = $line['fonction'];
             $_SESSION['email'] = $line['email'];
-            $_SESSION['IDusers'] = $line['IDusers'];
+            $_SESSION['IDuser'] = $line['IDuser'];
             $_SESSION['technicien'];
             header('Location:/AP1/PHP/index'. $_SESSION['fonction'].'.php');
             exit();

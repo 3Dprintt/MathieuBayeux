@@ -3,8 +3,7 @@ session_start();
 if(!$_SESSION['email']){
    header('Location: /AP1/PHP/connexion.php');
 }
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;charset=utf8;','root','root');
-
+include("connexionDB.php");
 $selectchamps = $bdd ->prepare ('SELECT * FROM indicepriorité');
 $selectchamps->execute();
 $champs = $selectchamps->fetchall();

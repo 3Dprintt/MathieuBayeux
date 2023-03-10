@@ -1,8 +1,7 @@
 
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;charset=utf8;','root','root');
-if(isset($_POST['envoi'])){
+include("connexionDB.php");if(isset($_POST['envoi'])){
     if(!empty($_POST['email']) AND !empty($_POST['Password'])){
         $pseudo = htmlspecialchars($_POST['email']);
         $mdp = sha1($_POST['Password']);

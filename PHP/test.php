@@ -1,6 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;charset=utf8;', 'root', 'root');
-
+include("connexionDB.php");
 session_start();
 if (!$_SESSION['email']) {
     header('Location: PHP/connexion.php');

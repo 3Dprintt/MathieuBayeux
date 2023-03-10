@@ -2,8 +2,7 @@
 
 use Dompdf\Dompdf;
 
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;charset=utf8;', 'root', 'root');
-
+include("connexionDB.php");
 $afficher = $bdd ->prepare('SELECT u.Nom , u.Prenom , u.fonction , d.objetdemande , d.detailsdemande , d.secteur , d.intitule , d.etat , d.ID , d.technicien , d.IDusers , d.RaisonMEA
     FROM users u
     INNER JOIN demandeeffectuer d

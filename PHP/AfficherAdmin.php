@@ -1,6 +1,5 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=gestiontravaux;charset=utf8;', 'root', 'root');
-
+include("connexionDB.php");
 session_start();
 if (!$_SESSION['email']) {
     header('Location: /AP1/PHP/connexion.php');
@@ -24,7 +23,7 @@ $user = $afficher->fetchAll();
 <html lang="en">
     <head>
         <title>Afficher les formulaires</title>
-        <link rel="stylesheet" href="/AP1/CSS/Afficher.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="/AP1/css/Afficher.css" media="screen" type="text/css" />
         <a href="/AP1/PHP/genpdf.php"><button id="bouton3">télécharger les demandes en cours?</button></a>
         <a href="/AP1/PHP/Deconnexion.php"><button id=boutondeco>Se <br> Deconnecter</button></a>
     </head>
